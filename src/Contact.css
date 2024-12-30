@@ -1,0 +1,318 @@
+.contact-section {
+  height: 100vh;
+  background: black;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Add gradient blur effect */
+.contact-section::before {
+  content: '';
+  position: absolute;
+  width: 700px;
+  height: 700px;
+  background: 
+    radial-gradient(circle at 30% 40%, rgba(64, 196, 255, 0.6) 0%, transparent 45%),
+    radial-gradient(circle at 70% 60%, rgba(223, 77, 255, 0.5) 0%, transparent 45%),
+    radial-gradient(circle at 50% 50%, rgba(64, 196, 255, 0.4) 0%, transparent 50%);
+  filter: blur(60px);
+  opacity: 0.5;
+  animation: moveAndMorph 20s ease-in-out infinite;
+}
+
+.contact-section::after {
+  content: '';
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  background: 
+    conic-gradient(
+      from 0deg at 50% 50%,
+      rgba(64, 196, 255, 0.3) 0deg,
+      rgba(223, 77, 255, 0.3) 120deg,
+      rgba(64, 196, 255, 0.3) 240deg,
+      rgba(223, 77, 255, 0.3) 360deg
+    );
+  filter: blur(90px);
+  opacity: 0.3;
+  animation: moveAndRotate 30s linear infinite;
+}
+
+@keyframes moveAndMorph {
+  0% {
+    top: -10%;
+    left: -10%;
+    transform: scale(1) rotate(0deg);
+    border-radius: 70% 30% 50% 70% / 60% 30% 70% 40%;
+  }
+  20% {
+    top: 80%;
+    left: 60%;
+    transform: scale(1.1) rotate(90deg);
+    border-radius: 30% 70% 70% 30% / 40% 60% 30% 70%;
+  }
+  40% {
+    top: 60%;
+    left: -20%;
+    transform: scale(0.9) rotate(180deg);
+    border-radius: 50% 50% 20% 80% / 25% 80% 20% 75%;
+  }
+  60% {
+    top: -30%;
+    left: 80%;
+    transform: scale(1.05) rotate(270deg);
+    border-radius: 80% 20% 50% 50% / 70% 30% 70% 30%;
+  }
+  80% {
+    top: 50%;
+    left: 50%;
+    transform: scale(0.95) rotate(360deg);
+    border-radius: 40% 60% 30% 70% / 60% 40% 60% 40%;
+  }
+  100% {
+    top: -10%;
+    left: -10%;
+    transform: scale(1) rotate(0deg);
+    border-radius: 70% 30% 50% 70% / 60% 30% 70% 40%;
+  }
+}
+
+@keyframes moveAndRotate {
+  0% {
+    top: 110%;
+    right: -10%;
+    transform: rotate(0deg);
+  }
+  25% {
+    top: 50%;
+    right: 80%;
+    transform: rotate(90deg);
+  }
+  50% {
+    top: -20%;
+    right: 50%;
+    transform: rotate(180deg);
+  }
+  75% {
+    top: 30%;
+    right: -30%;
+    transform: rotate(270deg);
+  }
+  100% {
+    top: 110%;
+    right: -10%;
+    transform: rotate(360deg);
+  }
+}
+
+.contact-content {
+  max-width: 800px;
+  width: 90%;
+  position: relative;
+  z-index: 2;
+  padding: 0;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.contact-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.section-title {
+  font-family: 'PP Neue Machina Inktrap', sans-serif;
+  font-size: 2.5rem;
+  color: white;
+  margin-bottom: 1.5rem;
+}
+
+.contact-description {
+  font-family: 'PP Neue Machina Inktrap', sans-serif;
+  color: #a0a0a0;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.contact-form {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.5rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Make these elements span full width */
+.contact-form input[name="subject"],
+.contact-form textarea,
+.contact-form .submit-button,
+.contact-form .status-message {
+  grid-column: 1 / -1;
+}
+
+.contact-input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 1rem 1.5rem;
+  background: rgba(15, 15, 15, 0.6);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  color: white;
+  font-family: 'PP Neue Machina Inktrap', sans-serif;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.name-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr; 
+  gap: 1.5rem;
+  width: 100%;
+}
+
+.contact-input:focus {
+  outline: none;
+  border-color: rgba(145, 90, 255, 0.5);
+  background: rgba(15, 15, 15, 0.75);
+}
+
+textarea.contact-input {
+  resize: vertical;
+  min-height: 150px;
+}
+
+.submit-button {
+  background: linear-gradient(to right, #3f74ff, #915AFF, #7b3fff);
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  font-family: 'PP Neue Machina Inktrap', sans-serif;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background-size: 200% 100%;
+  animation: gradientShift 8s ease infinite;
+  width: fit-content;
+  margin: 0 auto;
+}
+
+.submit-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(123, 63, 255, 0.2);
+}
+
+.submit-button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.status-message {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 1rem;
+  border-radius: 4px;
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+.status-message.success {
+  background: rgba(46, 213, 115, 0.1);
+  color: #2ed573;
+}
+
+.status-message.error {
+  background: rgba(255, 71, 87, 0.1);
+  color: #ff4757;
+}
+
+.loading-spinner {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top-color: white;
+  animation: spin 0.8s linear infinite;
+}
+
+.contact-gradient {
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  filter: blur(120px);
+  opacity: 0.15;
+  pointer-events: none;
+}
+
+.contact-gradient.left {
+  background: radial-gradient(circle, #3f74ff 0%, transparent 70%);
+  top: -20%;
+  left: -20%;
+}
+
+.contact-gradient.right {
+  background: radial-gradient(circle, #915AFF 0%, transparent 70%);
+  bottom: -20%;
+  right: -20%;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .contact-section {
+    padding: 4rem 0;
+    min-height: 100vh;
+    height: auto;
+  }
+
+  .contact-content {
+    width: 85%;
+  }
+
+  .section-title {
+    font-size: 2rem;
+  }
+
+  .name-email-group {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .contact-input {
+    font-size: 0.9rem;
+    padding: 0.875rem 1.25rem;
+  }
+
+  .submit-button {
+    width: 100%;
+  }
+
+  .contact-form {
+    grid-template-columns: 1fr;
+    width: 100%;
+  }
+}

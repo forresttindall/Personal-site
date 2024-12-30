@@ -22,18 +22,7 @@ A dynamic and interactive developer portfolio website built with React, featurin
 - React Icons
 - React Router
 
-## 🏃‍♂️ Getting Started
-
-### Prerequisites
-
-- Node.js (v16 or higher)
-- npm or yarn
-
-### Installation
-
-1. Clone the repository
-``git clone https://github.com/yourusername/portfolio.git``
-2. Install dependencies
+## Features
 
 ### Navigation
 - Responsive navbar with mobile menu

@@ -1,70 +1,92 @@
-# Personal Portfolio Site
+# Modern Developer Portfolio
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A dynamic and interactive developer portfolio website built with React, featuring smooth animations, a newsletter subscription system, and a contact form integration.
 
-## Available Scripts
+## 🚀 Features
 
-In the project directory, you can run:
+- Responsive navigation with hamburger menu for mobile
+- Animated hero section with dynamic text effects
+- Interactive experience timeline
+- Project showcase with animated cards
+- Newsletter subscription using Sender API
+- Contact form integration with EmailJS
+- Custom CSS animations and transitions
+- Custom cursor effects
 
-### `npm start`
+## 🛠️ Built With
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- React
+- CSS (with custom animations)
+- EmailJS
+- Sender API
+- React Icons
+- React Router
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 🏃‍♂️ Getting Started
 
-### `npm test`
+### Prerequisites
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Node.js (v16 or higher)
+- npm or yarn
 
-### `npm run build`
+### Installation
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. Clone the repository
+``git clone https://github.com/yourusername/portfolio.git``
+2. Install dependencies
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Navigation
+- Responsive navbar with mobile menu
+- Smooth scroll to sections
+- Dynamic active section highlighting
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Hero Section
+- Animated text reveal
+- Custom cursor effects
+- Social media links
 
-### `npm run eject`
+### Projects Section
+- Animated project cards
+- Technology stack tags
+- Live demo and source code links
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Newsletter Subscription
+- Integration with Sender API
+- Email validation
+- Success/error handling
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Contact Form
+- EmailJS integration
+- Form validation
+- Auto-response functionality
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## 📧 API Integrations
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### EmailJS Setup
+1. Create an account at [EmailJS](https://www.emailjs.com/)
+2. Create an email template
+3. Add your service ID, template ID, and public key to `.env`
 
-## Learn More
+### Sender API Setup
+1. Sign up for [Sender](https://www.sender.net/)
+2. Get your API key
+3. Add the API key to `.env`
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## 📱 Responsive Design
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+The portfolio is fully responsive and optimized for:
+- Mobile devices (320px and up)
+- Tablets (768px and up)
+- Desktops (1024px and up)
+- Large screens (1440px and up)
 
-### Code Splitting
+## 📧 Contact
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Your Name - [Forrest.tindall@gmail.com](mailto:forrest.tindall@gmail.com)
 
-### Analyzing the Bundle Size
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## 🙏 Acknowledgments
 
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- [EmailJS](https://www.emailjs.com/)
+- [Sender](https://www.sender.net/)
+- [React Icons](https://react-icons.github.io/react-icons/)

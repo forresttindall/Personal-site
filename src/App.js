@@ -1,5 +1,5 @@
 import React from 'react';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, Navigate } from 'react-router-dom';
 import './App.css';
 import Header from './Header';
 import HeroSection from './HeroSection';
@@ -10,17 +10,15 @@ import Contact from './Contact';
 import SolutionParadox from './articles/SolutionParadox';
 import OpenSourceRevolution from './articles/OpenSourceRevolution';
 import Testimonials from './Testimonials';
-import './Testimonials.css';
 import About from './About';
-import './About.css';
 import Links from './Links';
-import './Links.css';
+
 function App() {
   return (
     <div className="app-container">
       <Header />
       <Routes>
-        <Route path="/" element={
+        <Route exact path="/" element={
           <main>
             <HeroSection />
             <Projects />
@@ -30,10 +28,11 @@ function App() {
           </main>
         } />
         <Route path="/contact" element={<Contact />} />
-        <Route path="/blog/solution-paradox" element={<SolutionParadox />} />
-        <Route path="/blog/open-source-revolution" element={<OpenSourceRevolution />} />
         <Route path="/about" element={<About />} />
         <Route path="/links" element={<Links />} />
+        <Route path="/blog/solution-paradox" element={<SolutionParadox />} />
+        <Route path="/blog/open-source-revolution" element={<OpenSourceRevolution />} />
+        <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </div>
   );

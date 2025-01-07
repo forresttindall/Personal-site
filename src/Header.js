@@ -1,25 +1,74 @@
 import React, { useState } from 'react';
-import { House, CaretDown, GithubLogo, InstagramLogo, LinkedinLogo } from 'phosphor-react';
+import { House, CaretDown, GithubLogo, InstagramLogo, LinkedinLogo, List } from 'phosphor-react';
 import './Header.css';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  const scrollToSection = (sectionId) => {
+    // Close mobile menu if open
+    setIsMobileMenuOpen(false);
+    
+    // Check if we're on the home page
+    if (window.location.hash === '#/' || window.location.hash === '') {
+      const element = document.getElementById(sectionId);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    } else {
+      // If not on home page, navigate to home page first, then scroll
+      window.location.href = '/#/';
+      
+      // Keep checking for the element until it exists
+      const checkForElement = setInterval(() => {
+        const element = document.getElementById(sectionId);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+          clearInterval(checkForElement);
+        }
+      }, 100);
+
+      // Clear interval after 3 seconds to prevent infinite checking
+      setTimeout(() => clearInterval(checkForElement), 3000);
+    }
+  };
+
+  const scrollToTop = (e) => {
+    e.preventDefault();
+    
+    if (window.location.hash === '#/' || window.location.hash === '') {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    } else {
+      window.location.href = '/#/';
+      setTimeout(() => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }, 100);
+    }
+  };
 
   return (
     <header className="header">
       <nav className="floating-nav">
-        <a href="/" className="nav-brand">
+        <Link to="/" className="nav-brand" onClick={scrollToTop}>
           <House 
             className="home-icon"
             size={28}
             weight="thin"
           />
-        </a>
-        <ul className="nav-links">
-          <li><a href="/#projects">Projects</a></li>
-          <li><a href="/#blog">Blog</a></li>
-          <li><a href="/about">About</a></li>
-          <li><a href="/contact">Contact</a></li>
+        </Link>
+        <button 
+          className="mobile-menu-button"
+          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+        >
+          <List size={24} />
+        </button>
+        <ul className={`nav-links ${isMobileMenuOpen ? 'mobile-open' : ''}`}>
+          <li><a onClick={() => scrollToSection('projects')} style={{cursor: 'pointer'}}>Projects</a></li>
+          <li><a onClick={() => scrollToSection('blog')} style={{cursor: 'pointer'}}>Blog</a></li>
+          <li><Link to="/about">About</Link></li>
+          <li><Link to="/contact">Contact</Link></li>
           <li className="social-dropdown">
             <button 
               className="dropdown-trigger"

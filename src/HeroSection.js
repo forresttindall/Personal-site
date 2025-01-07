@@ -1,7 +1,33 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import './HeroSection.css';
+import { Link } from 'react-router-dom';
 
 const HeroSection = () => {
+  const scrollToSection = (sectionId) => {
+    // Check if we're on the home page
+    if (window.location.hash === '#/' || window.location.hash === '') {
+      const element = document.getElementById(sectionId);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    } else {
+      // If not on home page, navigate to home page first, then scroll
+      window.location.href = '/#/';
+      
+      // Keep checking for the element until it exists
+      const checkForElement = setInterval(() => {
+        const element = document.getElementById(sectionId);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+          clearInterval(checkForElement);
+        }
+      }, 100);
+
+      // Clear interval after 3 seconds to prevent infinite checking
+      setTimeout(() => clearInterval(checkForElement), 3000);
+    }
+  };
+
   return (
     <section className="hero-section">
       <div className="hero-content">
@@ -18,13 +44,16 @@ const HeroSection = () => {
             Focused on clean architecture and exceptional user experiences.
           </p>
           <div className="cta-group">
-            <a href="#projects" className="primary-button">
+            <button 
+              onClick={() => scrollToSection('projects')} 
+              className="primary-button"
+            >
               View Projects
               <span className="button-arrow">→</span>
-            </a>
-            <a href="/contact" className="secondary-button">
+            </button>
+            <Link to="/contact" className="secondary-button">
               Contact Me
-            </a>
+            </Link>
           </div>
         </div>
       </div>

@@ -16,10 +16,10 @@ const Contact = () => {
     setStatus({ ...status, isSubmitting: true });
 
     emailjs.sendForm(
-      'service_qv2eqqc',
-      'template_cc2wh4f',
+      '*/ SERVICE ID /*', // add service ID
+      '*/ TEMPLATE ID /*', // add template ID
       form.current,
-      'pZtlnSO7NHel0tpbW' // You need to add your public key here
+      '*/ YOUR PUBLIC KEY /*' // You need to add your public key here
     )
       .then((result) => {
         setStatus({

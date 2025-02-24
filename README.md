@@ -71,7 +71,7 @@ The portfolio is fully responsive and optimized for:
 
 ## 📧 Contact
 
-Your Name - [Forrest.tindall@gmail.com](mailto:forrest.tindall@gmail.com)
+Email - [Forrest.tindall@gmail.com](mailto:forrest.tindall@gmail.com)
 
 
 ## 🙏 Acknowledgments

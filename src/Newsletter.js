@@ -17,7 +17,7 @@ const Newsletter = () => {
       const response = await fetch('https://api.sender.net/v2/subscribers', {
         method: 'POST',
         headers: {
-          'Authorization': 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiNzMwOTQ0ZWQyN2FmNGNjM2IyOWNlODlmYzYyMDUxYTIyMDEwN2I2Y2EyMjUxZTA1NjA2ZDkyNzllZDViY2U2MDBhOGI2ZDNkMzQzZmVhNWMiLCJpYXQiOiIxNzM1NTEzODUzLjQxNTk5NiIsIm5iZiI6IjE3MzU1MTM4NTMuNDE1OTk4IiwiZXhwIjoiNDg4OTExMzg1My40MTQ0NzUiLCJzdWIiOiI4ODkyNTgiLCJzY29wZXMiOltdfQ.EQhya_nW4CZgp1JjZDPTiKKjeeFdOVivz8HeMbdRxZzGLLX1KX5zLjuC3czdjMTu4eTkIx3hc5RmK_CbkjSbgw',
+          'Authorization': 'XXXXXXXXX', // add key here 
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
